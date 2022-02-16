@@ -51,7 +51,7 @@ module.exports = (db) => {
 
   router.post("/add/:id", (req, res) => {
     console.log("INSIDE THE ADD ROUTE BITCHES");
-    const queryString = `INSERT INTO food_orders (order_id, food_id) 
+    const queryString = `INSERT INTO food_orders (order_id, food_id)
                         VALUES ($2, $1)`;
 
     const values = [req.params.id, req.cookies["order_id"]];
@@ -61,8 +61,8 @@ module.exports = (db) => {
   });
 
   router.post("/minus/:id", (req, res) => {
-    const queryString = `DELETE FROM food_orders 
-                        WHERE order_id = $2 
+    const queryString = `DELETE FROM food_orders
+                        WHERE order_id = $2
                         AND food_id = $1`;
     const values = [req.params.id, req.cookies["order_id"]];
     db.query(queryString, values)
@@ -89,6 +89,7 @@ module.exports = (db) => {
     });
   });
 
+  console.log('Yay boyyyy');
   return router;
 };
 
