@@ -36,9 +36,9 @@ $(document).ready(() => {
 
   $(".add-food").on("submit", function (event) {
     event.preventDefault();
-    //console.log(data);
+    const id = event.target.getAttribute('name');
     $.ajax({
-      url: "/menu/add/11",
+      url: `/menu/add/${id}`,
       method: "POST",
     }).then(() => {
       res.render("/menu");
@@ -47,10 +47,9 @@ $(document).ready(() => {
 
   $(".minus-food").on("submit", function (event) {
     event.preventDefault();
-    // alert("Alert!!!");
-    //const data = $(this).serialize();
+    const id = event.target.getAttribute('name');
     $.ajax({
-      url: "/menu/minus/11",
+      url: `/menu/minus/${id}`,
       method: "POST",
     }).then(() => {
       res.render("/menu");
