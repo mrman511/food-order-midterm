@@ -18,6 +18,7 @@
 - make a route for total price
 ### menu.js
 - increase price as user adds an order
+- errrrrrrororor
 
 ## CSS
 
