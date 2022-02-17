@@ -1,6 +1,7 @@
 body {
   width: 80%;
   margin: auto;
+  background:#fdcc43a4;
 }
 
 p {
@@ -24,6 +25,7 @@ main {
 nav i {
   font-size: 36px;
   cursor: pointer;
+  color: #8486D1;
 }
 
 .title {
@@ -56,7 +58,7 @@ nav i {
   width: 80%;
   max-width: 1000px;
   height: 60px;
-  background-color: skyblue;
+  background-color: #8486D1;
   border-radius: 30px;
   margin-top: 10px;
   display: flex;
@@ -79,8 +81,9 @@ nav i {
 }
 
 .checkout-button {
-  background-color: skyblue;
-  width: 45%;
+  background-color: #8486D1;
+  color: white;
+  width: 400px;
   height: 70px;
   font-size: 32px;
   margin: 0px auto;
@@ -89,3 +92,16 @@ nav i {
   display: inherit;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: rgb(72, 95, 197);
+  border: 2px solid black;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+

@@ -1,8 +1,10 @@
 body {
   width: 80%;
   margin: auto;
-  margin-top: 130px;
+  margin-top: 100px;
   text-align: center;
+  background-color: #fdcc43a4;
+
 }
 
 .main-header {
@@ -12,11 +14,11 @@ body {
 
 .fa-solid {
   font-size: 300px;
-  margin-top: 110px;
+  color: #8486D1;
 }
 
 .estimated {
-  margin-top: 120px;
+  margin-top: 80px;
 }
 
 .pickup {
@@ -36,8 +38,9 @@ body {
 }
 
 .home {
-  background-color: white;
-  width: 45%;
+  background-color: #8486D1;
+  color: white;
+  width: 400px;
   height: 70px;
   font-size: 32px;
   margin: 120px auto;
@@ -46,3 +49,16 @@ body {
   display: inherit;
   cursor: pointer;
 }
+
+button:hover {
+  background-color: rgb(72, 95, 197);
+  border: 2px solid black;
+  padding: 8px;
+  cursor: pointer;
+}
+
+button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
