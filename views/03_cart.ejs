@@ -23,43 +23,34 @@
   <body>
     <nav id="nav">
       <i class="fa-solid fa-angle-left"></i>
+      <h2 class="title">
+        My
+        Cart List
+      </h2>
     </nav>
 
-    <h1 class="title">
-      My <br />
-      Cart List
-    </h1>
+    <main>
     <% for (let item in food) { %>
     <div class="cart-list-container">
       <img id="images" src="<%= food[item].image %>" />
       <div class="food-info">
         <p><b><%= food[item].title %></b></p>
-        <p><%= food[item].price %></p>
+        <div class="price-qty">
+          <p><%= food[item].food_count %></p>
+          <p>$<%= food[item].total_price %></p>
+        </div>
       </div>
-      <div class="icons">
-
-      <form action="/cart" method="POST" name="<%= food[item].id %>" id="<%= food[item].id %>">
-        <button class="plus-button" type="submit">
-          <i class="fa-solid fa-plus"></i>
-        </button>
-      </form>
-
-      <div>
-        <input class="counter" value="0" type="text"></input>
-      </div>
-
-      <form action="/cart" method="POST" name="<%= food[item].id %>" id="<%= food[item].id %>">
-        <button class="minus-button" type="submit">
-          <i class="fa-solid fa-minus"></i>
-        </button>
-      </form>
-
-    </div>
     </div>
     <% } %>
+
+    <div class="total-price">
+      <h4 class="total-price-text">Todays Total $<%= totalCost %></h4>
+
+    </div>
 
     <form action="/confirmation" method="GET">
       <button class="checkout-button" type="submit">Checkout</button>
     </form>
+  </main>
   </body>
 </html>
