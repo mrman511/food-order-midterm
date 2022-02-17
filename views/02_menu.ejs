@@ -15,9 +15,9 @@
 
   <body>
     <nav id="nav">
-      <button>Drinks</button>
-      <button>Appitizers</button>
-      <button>Mains</button>
+      <a href="#menu-drinks"><button>Drinks</button></a>
+      <a href="#menu-appetizers"><button>Appetizers</button></a>
+      <a href="#menu-mains"><button>Mains</button></a>
       <form action="/cart" method="get">
         <label>Go To</label>
         <button type="submit">CART</button>
@@ -26,7 +26,8 @@
     <!-- following section is to display indevidual food items -->
     <main id="menu-items">
       <!-- DRINK ITEMS -->
-      <br id="menu-drinks" />
+      <br id="menu-drinks"/>
+      <h2>Drinks</h2>
       <%for (let item in drinks) {%>
       <article class="menu-item">
         <div class="food-item-header">
@@ -68,7 +69,8 @@
       </article>
       <% } %>
       <!-- APPETIZER ITEMS -->
-      <br id="menu-appetizers" />
+      <br id="menu-appetizers"/>
+      <h2>Appetizers</h2>
       <%for (let item in appetizers) {%>
       <article class="menu-item">
         <div class="food-item-header">
@@ -108,8 +110,9 @@
       </article>
       <% } %>
       <!-- MAIN ITEMS -->
-      <br id="menu-mains" />
-      <% for (let item in mains) { %>
+      <br id="menu-mains"/>
+      <h2>Mains</h2>
+      <% for (let item in mains){ %>
       <article class="menu-item">
         <div class="food-item-header">
           <img src="<%= mains[item].image %>" />
