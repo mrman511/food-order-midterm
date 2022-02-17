@@ -25,6 +25,7 @@
     "twilio": "^3.74.0"
   },
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "nodemon": "^2.0.10"
   }
 }
