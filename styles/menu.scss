@@ -2,19 +2,25 @@ body {
   flex-direction: column;
 }
 
+h2{
+  font-size: 2em;
+}
+
 nav {
   height: 100px;
   width: 100%;
   position: fixed;
-  background-color: rgb(211, 207, 207, 0);
+  background:rgba(163, 208, 219, 1);
+  background-blend-mode: color-burn;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  z-index: 1;
 }
 
 nav form {
   font-size: 1.5em;
-  width: 150px;
+  width: 160px;
 
 }
 
@@ -28,6 +34,8 @@ button {
   color: white;
   background-color: rgb(0, 37, 202);
   border: none;
+  border-radius: 10px;
+  padding: 10px;
   box-shadow: 2px 5px 7px black;
 }
 
@@ -63,7 +71,7 @@ main {
 }
 
 .food-item-header h3 {
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 .food-item-header p {
@@ -99,6 +107,7 @@ main {
 button:hover {
   background-color: rgb(72, 95, 197);
   border: 2px solid black;
+  padding: 8px;
   cursor: pointer;
 }
 
