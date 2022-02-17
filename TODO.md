@@ -3,18 +3,15 @@
 ## JQuery
 
 ### menuJQ.js
-- add and minus needs to call fetch count when ajax request is made ( currently does not refresh page )
-- 
+
+### confirmaitionJQ.js
+-create timeout function to return to index
 
 ## ROUTES
 
 ### confirmation.js
-- get the estimated time pick up
-- when checking out, send a confirmation text message
 
 ### cart.js
-- get food_orders items
-- make a route for total price
 
 ### menu.js
 
@@ -30,6 +27,10 @@
 
 ### index.scss
 - WE NEED A BAKED POTATO PICTURE
+
+### confirmation.scss
+- needs to be restructured
+
 
 # LAST
 - refactor files and clean up code

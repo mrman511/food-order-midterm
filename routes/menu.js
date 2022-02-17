@@ -12,17 +12,6 @@ router.use(cookieParser());
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    // res.cookie("order_id", response);
-
-    // if (!req.cookies) {
-    //   console.log("Hello!!!");
-    //   db.query(`INSERT INTO orders (user_id) VALUES (1) RETURNING id`).then(
-    //     (response) => {
-    //       console.log("response.rows[0].id: ", response.rows[0].id);
-    //       res.cookie("order_id", response.rows[0].id);
-    //     }
-    //   );
-    // }
 
     db.query(`SELECT food.* FROM food`)
       .then((data) => {
@@ -40,8 +29,8 @@ module.exports = (db) => {
             mains.push(menu[item]);
           }
         }
-
-        res.render("02_menu", { drinks, appetizers, mains });
+        console.log(drinks);
+        res.status(200).render("02_menu", { drinks, appetizers, mains });
       })
 
       .catch((err) => {
@@ -56,8 +45,9 @@ module.exports = (db) => {
 
     const values = [req.params.id, req.cookies["order_id"]];
     db.query(queryString, values).then((response) => {
-      console.log("Item added to order successfully");
-    });
+      res.send() ;
+      //res.render('02_menu');
+    })
   });
 
   router.post("/minus/:id", (req, res) => {
@@ -67,7 +57,8 @@ module.exports = (db) => {
     const values = [req.params.id, req.cookies["order_id"]];
     db.query(queryString, values)
       .then((data) => {
-        console.log(`Item removed from cart`);
+        res.send();
+        //res.render('02_menu');
       })
       .catch((err) => {
         console.log("ERROR: ", err);

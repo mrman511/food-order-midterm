@@ -25,7 +25,13 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
+  router.get("/finish", (req, res) => {
+    res.redirect('/')
+  })
+
   return router;
 };
+
+
 
 

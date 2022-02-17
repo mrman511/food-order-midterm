@@ -1,6 +1,16 @@
 $(document).ready(() => {
   let currentCookie = undefined;
 
+  const loadMenu = () => {
+    $.ajax({
+      url: '/menu',
+      method: "GET",
+      success: (response) => {
+        console.log('add or subtract menu item success');
+      }
+    })
+  }
+
   const fetchCounts = () => {
     $.ajax({
       url: `/menu/food_count`,
@@ -40,9 +50,10 @@ $(document).ready(() => {
     $.ajax({
       url: `/menu/add/${id}`,
       method: "POST",
-    }).then(() => {
-      res.render("/menu");
-    });
+      success: (response) => {
+        location.reload();
+      }
+    })
   });
 
   $(".minus-food").on("submit", function (event) {
@@ -51,50 +62,9 @@ $(document).ready(() => {
     $.ajax({
       url: `/menu/minus/${id}`,
       method: "POST",
-    }).then(() => {
-      res.render("/menu");
-    });
+      success: (response) => {
+        location.reload();
+      }
+    })
   });
 });
-
-// $('#new-tweet-form').on('submit', function (event) {
-//   event.preventDefault();
-//   const data = $(this).serialize();
-//   if (!tweetText.value) {
-//     $errorMessage.text('You gotta say something!');
-//     $errorMessage.slideDown(500);
-//     setTimeout(() => {
-//       $errorMessage.slideUp(1000);
-//     }, 1500);
-//   } else if (tweetText.value.length > 140) {
-//     $errorMessage.text('Backspace it up.');
-//     $errorMessage.slideDown(500);
-//     setTimeout(() => {
-//       $errorMessage.slideUp(1000);
-//     }, 1500);
-//   } else
-//     $.ajax({
-//       method: 'POST',
-//       url: '/tweets',
-//       data: data,
-//       success: tweets => {
-//         tweetText.value = '';
-//         $('.counter').text(140).css({ color: 'black' });
-//         getTweets();
-//       },
-//     });
-
-// const getTweets = () => {
-//   $.ajax({
-//     url: '/tweets',
-//     method: 'GET',
-//     success: tweets => {
-//       console.log(tweets);
-//       $tweetContainer.empty();
-//       for (const tweet of tweets) {
-//         const $tweet = createTweet(tweet);
-//         $tweetContainer.prepend($tweet);
-//       }
-//     },
-//   });
-// };
