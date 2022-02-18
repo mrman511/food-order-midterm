@@ -1,10 +1,8 @@
 $(document).ready(() => {
 
-  window.setTimeout(() => {
-    $.ajax({
-    url: '/confirmation/finish',
-    method: 'GET'
-  });
-  }, 5000)
+  function toHome() {
+    $('#home-button').trigger("click")
+  }
+  window.setTimeout(toHome, 10000);
 
 });

@@ -15,6 +15,10 @@ router.use(
 
 module.exports = (db) => {
   // GET menu button
+  router.get('/', (req, res) => {
+    res.render('01_index');
+  });
+
   router.get("/menu", (req, res) => {
     res.render("02_menu");
   });
