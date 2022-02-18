@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Menu</title>
+    <title>The Baked Potato: Menu</title>
 
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -61,7 +61,7 @@
               name="<%= drinks[item].id %>"
             >
               <button id="minus-btn" class="minus-button" type="submit">
-                - x
+                x
               </button>
             </form>
           </div>
@@ -87,7 +87,7 @@
             <form
               id="<%= appetizers[item].id %>-add"
               class="add-food"
-              action="/menu/add/<%= drinks[item].id %>"
+              action="/menu/add/<%= appetizers[item].id %>"
               method="post"
               name="<%= appetizers[item].id %>"
             >
@@ -99,7 +99,7 @@
             <form
               id="<%= appetizers[item].id %>-minus"
               class="minus-food"
-              action="/menu/minus/<%= drinks[item].id %>"
+              action="/menu/minus/<%= mains[item].id %>"
               method="post"
               name="<%= appetizers[item].id %>"
             >
@@ -128,7 +128,7 @@
             <form
               id="<%= mains[item].id %>-add"
               class="add-food"
-              action="/menu/add/<%= drinks[item].id %>"
+              action="/menu/add/<%= mains[item].id %>"
               method="post"
               name="<%= mains[item].id %>"
             >

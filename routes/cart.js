@@ -24,8 +24,9 @@ module.exports = (db) => {
         const food = data.rows;
         let totalCost = 0;
         for (item of data.rows){
-          totalCost += parseInt(item.total_price);
+          totalCost += parseFloat(item.total_price);
         }
+        totalCost = ((Math.floor(totalCost * 100)) / 100);
         console.log('CART FOOD DATA ROWS: ', { food, totalCost });
         res.render("03_cart", { food, totalCost });
       })
